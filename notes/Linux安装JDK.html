@@ -107,135 +107,20 @@
 </blockquote>
 <p>jdk14下载地址：<a target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/javase-jdk14-downloads.html">https://www.oracle.com/java/technologies/javase-jdk14-downloads.html</a></p>
 <p><a name="sacTz"></a></p>
-<h3 id="A、方式一（rpm方式）"><a href="#A、方式一（rpm方式）" class="headerlink" title="A、方式一（rpm方式）"></a>A、方式一（rpm方式）</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#需要提前下载好rpm包</span>
-<span class="token comment">#安装之前检测jdk是否安装</span>
-<span class="token function">rpm</span> <span class="token parameter variable">-qa</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token function">java</span>
-
-<span class="token comment">#执行安装</span>
-<span class="token function">rpm</span> <span class="token parameter variable">-ivh</span> jdk-8u251-linux-x64.rpm 
-
-<span class="token comment">#检测jdk版本</span>
-<span class="token function">java</span> <span class="token parameter variable">-version</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="A、方式一（rpm方式）"><a href="#A、方式一（rpm方式）" class="headerlink" title="A、方式一（rpm方式）"></a>A、方式一（rpm方式）</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">需要提前下载好rpm包</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">安装之前检测jdk是否安装</span></span><br><span class="line">rpm -qa | grep java</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">执行安装</span></span><br><span class="line">rpm -ivh jdk-8u251-linux-x64.rpm </span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">检测jdk版本</span></span><br><span class="line">java -version</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p><a name="owtxu"></a></p>
-<h3 id="B、方式二（压缩包）"><a href="#B、方式二（压缩包）" class="headerlink" title="B、方式二（压缩包）"></a>B、方式二（压缩包）</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#需要提前下载好jdk-8u251-linux-x64.tar.gz</span>
-<span class="token function">tar</span> <span class="token parameter variable">-zvxf</span> jdk-8u251-linux-x64.tar.gz
-
-<span class="token comment">#配置环境变量</span>
-<span class="token function">sudo</span> <span class="token function">vi</span> /etc/profile
-
-<span class="token comment">#将一下配置添加到文件末尾（注意JAVA_HOME的位置）</span>
-<span class="token comment">#java</span>
-<span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA_HOME</span><span class="token operator">=</span>/usr/java/jdk1.8.0_181
-<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token variable">$JAVA_HOME</span>/bin:<span class="token environment constant">$PATH</span>
-<span class="token builtin class-name">export</span> <span class="token assign-left variable">CLASSPATH</span><span class="token operator">=</span>.:<span class="token variable">$JAVA_HOME</span>/lib/dt.jar:<span class="token variable">$JAVA_HOME</span>/lib
-
-
-
-<span class="token function">sudo</span> <span class="token function">tee</span> /etc/profile <span class="token operator">&lt;&lt;-</span><span class="token string">'EOF'
-export JAVA_HOME=/home/yongzheng/application/jdk/jdk1.8.0_301
-export PATH=$JAVA_HOME/bin:$PATH
-export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib
-export M2_HOME=/home/yongzheng/application/maven
-export PATH=$PATH:$M2_HOME/bin
-EOF</span>
-
-<span class="token comment">#重新加载配置</span>
-<span class="token builtin class-name">source</span> /etc/profile
-
-<span class="token comment">#验证码</span>
-<span class="token function">java</span> <span class="token parameter variable">-version</span>
-
-
-<span class="token comment">#MAC</span>
-<span class="token function">sudo</span> <span class="token function">tee</span> ~/.bash_profile <span class="token operator">&lt;&lt;-</span><span class="token string">'EOF'
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_333.jdk/Contents/Home
-export M2_HOME=/Library/Java/Maven/apache-maven-3.8.6
-export GRADLE_HOME=/Library/Java/Gradle/gradle-7.4.2
-export GRADLE_USER_HOME=/Library/Java/Repository
-
-export PATH=$JAVA_HOME/bin:$M2_HOME/bin:$GRADLE_HOME/bin:$PATH
-export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib
-
-EOF</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="B、方式二（压缩包）"><a href="#B、方式二（压缩包）" class="headerlink" title="B、方式二（压缩包）"></a>B、方式二（压缩包）</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">需要提前下载好jdk-8u251-linux-x64.tar.gz</span></span><br><span class="line">tar -zvxf jdk-8u251-linux-x64.tar.gz</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">配置环境变量</span></span><br><span class="line">sudo vi /etc/profile</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">将一下配置添加到文件末尾（注意JAVA_HOME的位置）</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">java</span></span><br><span class="line">export JAVA_HOME=/usr/java/jdk1.8.0_181</span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sudo tee /etc/profile &lt;&lt;-&#x27;EOF&#x27;</span><br><span class="line">export JAVA_HOME=/home/yongzheng/application/jdk/jdk1.8.0_301</span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib</span><br><span class="line">export M2_HOME=/home/yongzheng/application/maven</span><br><span class="line">export PATH=$PATH:$M2_HOME/bin</span><br><span class="line">EOF</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">重新加载配置</span></span><br><span class="line">source /etc/profile</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">验证码</span></span><br><span class="line">java -version</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">MAC</span></span><br><span class="line">sudo tee ~/.bash_profile &lt;&lt;-&#x27;EOF&#x27;</span><br><span class="line">export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_333.jdk/Contents/Home</span><br><span class="line">export M2_HOME=/Library/Java/Maven/apache-maven-3.8.6</span><br><span class="line">export GRADLE_HOME=/Library/Java/Gradle/gradle-7.4.2</span><br><span class="line">export GRADLE_USER_HOME=/Library/Java/Repository</span><br><span class="line"></span><br><span class="line">export PATH=$JAVA_HOME/bin:$M2_HOME/bin:$GRADLE_HOME/bin:$PATH</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib</span><br><span class="line"></span><br><span class="line">EOF</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p><a name="7GrzW"></a></p>
-<h3 id="C、方式三（yum）"><a href="#C、方式三（yum）" class="headerlink" title="C、方式三（yum）"></a>C、方式三（yum）</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#搜索jdk安装包</span>
-yum search <span class="token function">java</span><span class="token operator">|</span><span class="token function">grep</span> jdk
-
-<span class="token comment">#搜索jdk 1.8.0版本</span>
-yum search <span class="token function">java</span><span class="token operator">|</span><span class="token function">grep</span> jdk <span class="token operator">|</span> <span class="token function">grep</span> <span class="token number">1.8</span>.0
-
-Repodata is over <span class="token number">2</span> weeks old. Install yum-cron? Or run: yum makecache fast
-java-1.8.0-openjdk.i686 <span class="token builtin class-name">:</span> OpenJDK Runtime Environment <span class="token number">8</span>
-java-1.8.0-openjdk.x86_64 <span class="token builtin class-name">:</span> OpenJDK Runtime Environment <span class="token number">8</span>
-java-1.8.0-openjdk-accessibility.i686 <span class="token builtin class-name">:</span> OpenJDK accessibility connector
-java-1.8.0-openjdk-accessibility.x86_64 <span class="token builtin class-name">:</span> OpenJDK accessibility connector
-java-1.8.0-openjdk-accessibility-debug.i686 <span class="token builtin class-name">:</span> OpenJDK <span class="token number">8</span> accessibility connector
-java-1.8.0-openjdk-accessibility-debug.x86_64 <span class="token builtin class-name">:</span> OpenJDK <span class="token number">8</span> accessibility
-java-1.8.0-openjdk-debug.i686 <span class="token builtin class-name">:</span> OpenJDK Runtime Environment <span class="token number">8</span> with full debug on
-java-1.8.0-openjdk-debug.x86_64 <span class="token builtin class-name">:</span> OpenJDK Runtime Environment <span class="token number">8</span> with full debug
-java-1.8.0-openjdk-demo.i686 <span class="token builtin class-name">:</span> OpenJDK Demos <span class="token number">8</span>
-java-1.8.0-openjdk-demo.x86_64 <span class="token builtin class-name">:</span> OpenJDK Demos <span class="token number">8</span>
-java-1.8.0-openjdk-demo-debug.i686 <span class="token builtin class-name">:</span> OpenJDK Demos <span class="token number">8</span> with full debug on
-java-1.8.0-openjdk-demo-debug.x86_64 <span class="token builtin class-name">:</span> OpenJDK Demos <span class="token number">8</span> with full debug on
-java-1.8.0-openjdk-devel.i686 <span class="token builtin class-name">:</span> OpenJDK Development Environment <span class="token number">8</span>
-java-1.8.0-openjdk-devel.x86_64 <span class="token builtin class-name">:</span> OpenJDK Development Environment <span class="token number">8</span>
-java-1.8.0-openjdk-devel-debug.i686 <span class="token builtin class-name">:</span> OpenJDK Development Environment <span class="token number">8</span> with
-java-1.8.0-openjdk-devel-debug.x86_64 <span class="token builtin class-name">:</span> OpenJDK Development Environment <span class="token number">8</span> with
-java-1.8.0-openjdk-headless.i686 <span class="token builtin class-name">:</span> OpenJDK Headless Runtime Environment <span class="token number">8</span>
-java-1.8.0-openjdk-headless.x86_64 <span class="token builtin class-name">:</span> OpenJDK Headless Runtime Environment <span class="token number">8</span>
-java-1.8.0-openjdk-headless-debug.i686 <span class="token builtin class-name">:</span> OpenJDK Runtime Environment with full
-java-1.8.0-openjdk-headless-debug.x86_64 <span class="token builtin class-name">:</span> OpenJDK Runtime Environment with full
-java-1.8.0-openjdk-javadoc.noarch <span class="token builtin class-name">:</span> OpenJDK <span class="token number">8</span> API documentation
-java-1.8.0-openjdk-javadoc-debug.noarch <span class="token builtin class-name">:</span> OpenJDK <span class="token number">8</span> API documentation <span class="token keyword">for</span>
-java-1.8.0-openjdk-javadoc-zip.noarch <span class="token builtin class-name">:</span> OpenJDK <span class="token number">8</span> API documentation compressed
-java-1.8.0-openjdk-javadoc-zip-debug.noarch <span class="token builtin class-name">:</span> OpenJDK <span class="token number">8</span> API documentation
-java-1.8.0-openjdk-src.i686 <span class="token builtin class-name">:</span> OpenJDK Source Bundle <span class="token number">8</span>
-java-1.8.0-openjdk-src.x86_64 <span class="token builtin class-name">:</span> OpenJDK Source Bundle <span class="token number">8</span>
-java-1.8.0-openjdk-src-debug.i686 <span class="token builtin class-name">:</span> OpenJDK Source Bundle <span class="token number">8</span> <span class="token keyword">for</span> packages with
-java-1.8.0-openjdk-src-debug.x86_64 <span class="token builtin class-name">:</span> OpenJDK Source Bundle <span class="token number">8</span> <span class="token keyword">for</span> packages with
-
-<span class="token comment">#安装下载jdk1.8，下载之后默认的目录为： /usr/lib/jvm/</span>
-yum <span class="token function">install</span> java-1.8.0-openjdk
-
-
-<span class="token comment">#验证码</span>
-<span class="token function">java</span> <span class="token parameter variable">-version</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="C、方式三（yum）"><a href="#C、方式三（yum）" class="headerlink" title="C、方式三（yum）"></a>C、方式三（yum）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#搜索jdk安装包</span></span><br><span class="line">yum search java|grep jdk</span><br><span class="line"></span><br><span class="line"><span class="comment">#搜索jdk 1.8.0版本</span></span><br><span class="line">yum search java|grep jdk | grep 1.8.0</span><br><span class="line"></span><br><span class="line">Repodata is over 2 weeks old. Install yum-cron? Or run: yum makecache fast</span><br><span class="line">java-1.8.0-openjdk.i686 : OpenJDK Runtime Environment 8</span><br><span class="line">java-1.8.0-openjdk.x86_64 : OpenJDK Runtime Environment 8</span><br><span class="line">java-1.8.0-openjdk-accessibility.i686 : OpenJDK accessibility connector</span><br><span class="line">java-1.8.0-openjdk-accessibility.x86_64 : OpenJDK accessibility connector</span><br><span class="line">java-1.8.0-openjdk-accessibility-debug.i686 : OpenJDK 8 accessibility connector</span><br><span class="line">java-1.8.0-openjdk-accessibility-debug.x86_64 : OpenJDK 8 accessibility</span><br><span class="line">java-1.8.0-openjdk-debug.i686 : OpenJDK Runtime Environment 8 with full debug on</span><br><span class="line">java-1.8.0-openjdk-debug.x86_64 : OpenJDK Runtime Environment 8 with full debug</span><br><span class="line">java-1.8.0-openjdk-demo.i686 : OpenJDK Demos 8</span><br><span class="line">java-1.8.0-openjdk-demo.x86_64 : OpenJDK Demos 8</span><br><span class="line">java-1.8.0-openjdk-demo-debug.i686 : OpenJDK Demos 8 with full debug on</span><br><span class="line">java-1.8.0-openjdk-demo-debug.x86_64 : OpenJDK Demos 8 with full debug on</span><br><span class="line">java-1.8.0-openjdk-devel.i686 : OpenJDK Development Environment 8</span><br><span class="line">java-1.8.0-openjdk-devel.x86_64 : OpenJDK Development Environment 8</span><br><span class="line">java-1.8.0-openjdk-devel-debug.i686 : OpenJDK Development Environment 8 with</span><br><span class="line">java-1.8.0-openjdk-devel-debug.x86_64 : OpenJDK Development Environment 8 with</span><br><span class="line">java-1.8.0-openjdk-headless.i686 : OpenJDK Headless Runtime Environment 8</span><br><span class="line">java-1.8.0-openjdk-headless.x86_64 : OpenJDK Headless Runtime Environment 8</span><br><span class="line">java-1.8.0-openjdk-headless-debug.i686 : OpenJDK Runtime Environment with full</span><br><span class="line">java-1.8.0-openjdk-headless-debug.x86_64 : OpenJDK Runtime Environment with full</span><br><span class="line">java-1.8.0-openjdk-javadoc.noarch : OpenJDK 8 API documentation</span><br><span class="line">java-1.8.0-openjdk-javadoc-debug.noarch : OpenJDK 8 API documentation <span class="keyword">for</span></span><br><span class="line">java-1.8.0-openjdk-javadoc-zip.noarch : OpenJDK 8 API documentation compressed</span><br><span class="line">java-1.8.0-openjdk-javadoc-zip-debug.noarch : OpenJDK 8 API documentation</span><br><span class="line">java-1.8.0-openjdk-src.i686 : OpenJDK Source Bundle 8</span><br><span class="line">java-1.8.0-openjdk-src.x86_64 : OpenJDK Source Bundle 8</span><br><span class="line">java-1.8.0-openjdk-src-debug.i686 : OpenJDK Source Bundle 8 <span class="keyword">for</span> packages with</span><br><span class="line">java-1.8.0-openjdk-src-debug.x86_64 : OpenJDK Source Bundle 8 <span class="keyword">for</span> packages with</span><br><span class="line"></span><br><span class="line"><span class="comment">#安装下载jdk1.8，下载之后默认的目录为： /usr/lib/jvm/</span></span><br><span class="line">yum install java-1.8.0-openjdk</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#验证码</span></span><br><span class="line">java -version</span><br></pre></td></tr></table></figure>
 
 <p><a name="aUpZZ"></a></p>
 <h2 id="2、Ubuntu安装JDK"><a href="#2、Ubuntu安装JDK" class="headerlink" title="2、Ubuntu安装JDK"></a>2、Ubuntu安装JDK</h2><p><a name="b2kF5"></a></p>
-<h3 id="A、方式一"><a href="#A、方式一" class="headerlink" title="A、方式一"></a>A、方式一</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#搜索可用jdk列表</span>
-<span class="token function">sudo</span> <span class="token function">apt</span> search openjdk-8
-
-<span class="token comment">#安装jdk</span>
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> openjdk-8-jdk
-
-
-<span class="token comment">#验证码</span>
-<span class="token function">java</span> <span class="token parameter variable">-version</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="A、方式一"><a href="#A、方式一" class="headerlink" title="A、方式一"></a>A、方式一</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">搜索可用jdk列表</span></span><br><span class="line">sudo apt search openjdk-8</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">安装jdk</span></span><br><span class="line">sudo apt-get install openjdk-8-jdk</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">验证码</span></span><br><span class="line">java -version</span><br></pre></td></tr></table></figure>
 
 <p><a name="txhv5"></a></p>
-<h3 id="B、方式二（压缩包）-1"><a href="#B、方式二（压缩包）-1" class="headerlink" title="B、方式二（压缩包）"></a>B、方式二（压缩包）</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#需要提前下载好jdk-8u251-linux-x64.tar.gz</span>
-<span class="token function">tar</span> <span class="token parameter variable">-zvxf</span> jdk-8u251-linux-x64.tar.gz
-
-<span class="token comment">#配置环境变量</span>
-<span class="token function">sudo</span> <span class="token function">vi</span> /etc/profile
-
-<span class="token comment">#将一下配置添加到文件末尾（注意JAVA_HOME的位置）</span>
-<span class="token comment">#java</span>
-<span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA_HOME</span><span class="token operator">=</span>/usr/java/jdk1.8.0_181
-<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token variable">$JAVA_HOME</span>/bin:<span class="token environment constant">$PATH</span>
-<span class="token builtin class-name">export</span> <span class="token assign-left variable">CLASSPATH</span><span class="token operator">=</span>.:<span class="token variable">$JAVA_HOME</span>/lib/dt.jar:<span class="token variable">$JAVA_HOME</span>/lib
-
-<span class="token comment">#重新加载配置</span>
-<span class="token builtin class-name">source</span> /etc/profile
-
-<span class="token comment">#验证码</span>
-<span class="token function">java</span> <span class="token parameter variable">-version</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="B、方式二（压缩包）-1"><a href="#B、方式二（压缩包）-1" class="headerlink" title="B、方式二（压缩包）"></a>B、方式二（压缩包）</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">需要提前下载好jdk-8u251-linux-x64.tar.gz</span></span><br><span class="line">tar -zvxf jdk-8u251-linux-x64.tar.gz</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">配置环境变量</span></span><br><span class="line">sudo vi /etc/profile</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">将一下配置添加到文件末尾（注意JAVA_HOME的位置）</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">java</span></span><br><span class="line">export JAVA_HOME=/usr/java/jdk1.8.0_181</span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">重新加载配置</span></span><br><span class="line">source /etc/profile</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">验证码</span></span><br><span class="line">java -version</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 </article>

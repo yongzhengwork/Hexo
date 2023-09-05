@@ -23,12 +23,12 @@
   <title>RuoYi-Vue-Plus：Linux工具安装 - aloneme</title>
 
   
-    <meta name="description" content="1、lrzsz工具（上传下载）#Ubuntu下载安装包 sudo apt-get install -y lrzsz #CentOS下载安装包 yum install -y lrzsz  #上传文件 rz #下载文件 sz 文件名   2、sftp工具（上传下载）#Xshell的sftp工具 #查看服务器的位置 pwd  #查看本机的位置 lpwd  #固定本机的位置 lcd  #上传文件 或直接">
+    <meta name="description" content="1、lrzsz工具（上传下载）123456789#Ubuntu下载安装包sudo apt-get install -y lrzsz#CentOS下载安装包yum install -y lrzsz#上传文件rz#下载文件sz 文件名   2、sftp工具（上传下载）1234567891011121314151617181920212223#Xshell的sftp工具#查看服务器的位置pwd#查看本">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Linux工具安装">
 <meta property="og:url" content="https://hexo.aloneme.cn/wiki/ruoyi-vue-plus/Linux%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85.html">
 <meta property="og:site_name" content="aloneme">
-<meta property="og:description" content="1、lrzsz工具（上传下载）#Ubuntu下载安装包 sudo apt-get install -y lrzsz #CentOS下载安装包 yum install -y lrzsz  #上传文件 rz #下载文件 sz 文件名   2、sftp工具（上传下载）#Xshell的sftp工具 #查看服务器的位置 pwd  #查看本机的位置 lpwd  #固定本机的位置 lcd  #上传文件 或直接">
+<meta property="og:description" content="1、lrzsz工具（上传下载）123456789#Ubuntu下载安装包sudo apt-get install -y lrzsz#CentOS下载安装包yum install -y lrzsz#上传文件rz#下载文件sz 文件名   2、sftp工具（上传下载）1234567891011121314151617181920212223#Xshell的sftp工具#查看服务器的位置pwd#查看本">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-08-31T07:48:37.000Z">
 <meta property="article:modified_time" content="2023-09-04T09:31:45.023Z">
@@ -96,147 +96,22 @@
   <article class='md-text content wiki'>
   <h1 class="article-title"><span>Linux工具安装</span></h1>
   <p><a name="Z8ZQ6"></a></p>
-<h2 id="1、lrzsz工具（上传下载）"><a href="#1、lrzsz工具（上传下载）" class="headerlink" title="1、lrzsz工具（上传下载）"></a>1、lrzsz工具（上传下载）</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#Ubuntu下载安装包</span>
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> <span class="token parameter variable">-y</span> lrzsz
-<span class="token comment">#CentOS下载安装包</span>
-yum <span class="token function">install</span> <span class="token parameter variable">-y</span> lrzsz
-
-<span class="token comment">#上传文件</span>
-rz
-<span class="token comment">#下载文件</span>
-sz 文件名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="1、lrzsz工具（上传下载）"><a href="#1、lrzsz工具（上传下载）" class="headerlink" title="1、lrzsz工具（上传下载）"></a>1、lrzsz工具（上传下载）</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">Ubuntu下载安装包</span></span><br><span class="line">sudo apt-get install -y lrzsz</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">CentOS下载安装包</span></span><br><span class="line">yum install -y lrzsz</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">上传文件</span></span><br><span class="line">rz</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">下载文件</span></span><br><span class="line">sz 文件名</span><br></pre></td></tr></table></figure>
 
 <p><a name="E4rBf"></a></p>
-<h2 id="2、sftp工具（上传下载）"><a href="#2、sftp工具（上传下载）" class="headerlink" title="2、sftp工具（上传下载）"></a>2、sftp工具（上传下载）</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#Xshell的sftp工具</span>
-<span class="token comment">#查看服务器的位置</span>
-<span class="token builtin class-name">pwd</span>
-
-<span class="token comment">#查看本机的位置</span>
-lpwd
-
-<span class="token comment">#固定本机的位置</span>
-lcd
-
-<span class="token comment">#上传文件 或直接put 使用文件弹出框上传</span>
-<span class="token comment">#将本机lcd默认路径下的abc.txt 上传到服务器现在的位置</span>
-put abc.txt
-
-<span class="token comment">#上传多个文件</span>
-mput *.txt
-
-<span class="token comment">#下载文件</span>
-<span class="token comment">#将服务器现在位置的abc.txt文件，下载到lcd默认的本机的位置</span>
-get abc.txt 
-
-<span class="token comment">#下载多个</span>
-mget *.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2、sftp工具（上传下载）"><a href="#2、sftp工具（上传下载）" class="headerlink" title="2、sftp工具（上传下载）"></a>2、sftp工具（上传下载）</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">Xshell的sftp工具</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">查看服务器的位置</span></span><br><span class="line">pwd</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">查看本机的位置</span></span><br><span class="line">lpwd</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">固定本机的位置</span></span><br><span class="line">lcd</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">上传文件 或直接put 使用文件弹出框上传</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">将本机lcd默认路径下的abc.txt 上传到服务器现在的位置</span></span><br><span class="line">put abc.txt</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">上传多个文件</span></span><br><span class="line">mput *.txt</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">下载文件</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">将服务器现在位置的abc.txt文件，下载到lcd默认的本机的位置</span></span><br><span class="line">get abc.txt </span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">下载多个</span></span><br><span class="line">mget *.txt</span><br></pre></td></tr></table></figure>
 
 <p><a name="IguYR"></a></p>
-<h2 id="3、openssh-server工具（ssh远程）"><a href="#3、openssh-server工具（ssh远程）" class="headerlink" title="3、openssh-server工具（ssh远程）"></a>3、openssh-server工具（ssh远程）</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># Xshell无法SSH连接Ubuntu </span>
-<span class="token comment">#下载ssh服务</span>
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> openssh-server
-<span class="token comment"># 查看Ubuntu是否开启22端口</span>
-<span class="token function">netstat</span> <span class="token parameter variable">-ntlp</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token number">22</span>
-<span class="token comment">#检测端口是否开启</span>
-telnet <span class="token number">192.168</span>.3.244 <span class="token number">22</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3、openssh-server工具（ssh远程）"><a href="#3、openssh-server工具（ssh远程）" class="headerlink" title="3、openssh-server工具（ssh远程）"></a>3、openssh-server工具（ssh远程）</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Xshell无法SSH连接Ubuntu</span> </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">下载ssh服务</span></span><br><span class="line">sudo apt-get install openssh-server</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看Ubuntu是否开启22端口</span></span><br><span class="line">netstat -ntlp | grep 22</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">检测端口是否开启</span></span><br><span class="line">telnet 192.168.3.244 22</span><br></pre></td></tr></table></figure>
 
 <p><a name="2sGuJ"></a></p>
-<h2 id="4、sshpass工具（ssh远程）"><a href="#4、sshpass工具（ssh远程）" class="headerlink" title="4、sshpass工具（ssh远程）"></a>4、sshpass工具（ssh远程）</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 安装软件包</span>
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> sshpass
-
-<span class="token comment"># 直接远程Linux主机</span>
-<span class="token comment"># sshpass -p password ssh -p port username@IP   默认22端口</span>
-sshpass <span class="token parameter variable">-p</span> xxx <span class="token function">ssh</span> root@192.168.11.11
-
-<span class="token comment">#从密码文件读取文件内容作为密码去远程连接主机</span>
-sshpass <span class="token parameter variable">-f</span> xxx.txt  <span class="token function">ssh</span> root@192.168.11.11
-
-<span class="token comment">#从远程主机上拉取文件到本地</span>
-sshpass <span class="token parameter variable">-p</span> <span class="token punctuation">&#123;</span>密码<span class="token punctuation">&#125;</span> <span class="token function">scp</span> <span class="token punctuation">&#123;</span>用户名<span class="token punctuation">&#125;</span>@<span class="token punctuation">&#123;</span>主机IP<span class="token punctuation">&#125;</span>:<span class="token variable">$&#123;远程主机目录&#125;</span> <span class="token variable">$&#123;本地主机目录&#125;</span>
-
-<span class="token comment">#将主机目录文件拷贝至远程主机目录</span>
-sshpass <span class="token parameter variable">-p</span> <span class="token punctuation">&#123;</span>密码<span class="token punctuation">&#125;</span> <span class="token function">scp</span> <span class="token variable">$&#123;本地主机目录&#125;</span> <span class="token punctuation">&#123;</span>用户名<span class="token punctuation">&#125;</span>@<span class="token punctuation">&#123;</span>主机IP<span class="token punctuation">&#125;</span>:<span class="token variable">$&#123;远程主机目录&#125;</span> 
-
-<span class="token comment">#远程执行命令</span>
-sshpass <span class="token parameter variable">-p</span> password <span class="token function">ssh</span> username@host <span class="token operator">&lt;</span>cmd<span class="token operator">></span>
-
-
-
-sshpass：用于非交互的ssh 密码验证
-使用 <span class="token parameter variable">-p</span> 参数指定明文密码，然后直接登录远程服务器。 它支持密码从命令行,文件,环境变量中读取
-<span class="token number">1</span>、从命令行方式传递密码
-sshpass <span class="token parameter variable">-p</span> user_password <span class="token function">ssh</span> user_name@192.168.1.2  【登录远程机器】
-sshpass <span class="token parameter variable">-p</span> user_password <span class="token function">scp</span> <span class="token parameter variable">-P22</span> root@192.168.1.2:/home/test  ./ 【远程机器/home/test 复制到本机当前目录】
-还可以加参数 <span class="token parameter variable">-q</span> 【去掉进度显示】
-
-<span class="token number">2</span>、从文件读取密码
-<span class="token builtin class-name">echo</span> <span class="token string">"user_password"</span> <span class="token operator">></span> user.passwd
-sshpass <span class="token parameter variable">-f</span> user.passwd <span class="token function">ssh</span> user_name@192.168.1.2
-
-<span class="token number">3</span>、从环境变量获取密码
-<span class="token builtin class-name">export</span> <span class="token assign-left variable">SSHPASS</span><span class="token operator">=</span><span class="token string">"user_password"</span>
-sshpass <span class="token parameter variable">-e</span> <span class="token function">ssh</span> user_name@192.168.1.2 
-
-<span class="token number">4</span>、sshpass <span class="token parameter variable">-p</span> user_password <span class="token function">ssh</span>  <span class="token parameter variable">-o</span> <span class="token assign-left variable">StrictHostKeyChecking</span><span class="token operator">=</span>no  user_name@192.168.1.2 
-【-o <span class="token assign-left variable">StrictHostKeyChecking</span><span class="token operator">=</span>no 表示远程连接时不提示是否输入yes/no】
-
-<span class="token number">5</span>、使用sshpass远程免密，在远程主机上执行shell命令，如下远程执行命令：touch /opt/file.txt
-sshpass <span class="token parameter variable">-p</span> user_password <span class="token function">ssh</span>  <span class="token parameter variable">-o</span> <span class="token assign-left variable">StrictHostKeyChecking</span><span class="token operator">=</span>no  user_name@192.168.1.2  <span class="token function">touch</span> /opt/file.txt
-<span class="token punctuation">[</span>注：shell命令要和sshpass命令写在一行<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="4、sshpass工具（ssh远程）"><a href="#4、sshpass工具（ssh远程）" class="headerlink" title="4、sshpass工具（ssh远程）"></a>4、sshpass工具（ssh远程）</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装软件包</span></span><br><span class="line">sudo apt-get install sshpass</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">直接远程Linux主机</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">sshpass -p password ssh -p port username@IP   默认22端口</span></span><br><span class="line">sshpass -p xxx ssh root@192.168.11.11</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">从密码文件读取文件内容作为密码去远程连接主机</span></span><br><span class="line">sshpass -f xxx.txt  ssh root@192.168.11.11</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">从远程主机上拉取文件到本地</span></span><br><span class="line">sshpass -p &#123;密码&#125; scp &#123;用户名&#125;@&#123;主机IP&#125;:$&#123;远程主机目录&#125; $&#123;本地主机目录&#125;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">将主机目录文件拷贝至远程主机目录</span></span><br><span class="line">sshpass -p &#123;密码&#125; scp $&#123;本地主机目录&#125; &#123;用户名&#125;@&#123;主机IP&#125;:$&#123;远程主机目录&#125; </span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">远程执行命令</span></span><br><span class="line">sshpass -p password ssh username@host &lt;cmd&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sshpass：用于非交互的ssh 密码验证</span><br><span class="line">使用 -p 参数指定明文密码，然后直接登录远程服务器。 它支持密码从命令行,文件,环境变量中读取</span><br><span class="line">1、从命令行方式传递密码</span><br><span class="line">sshpass -p user_password ssh user_name@192.168.1.2  【登录远程机器】</span><br><span class="line">sshpass -p user_password scp -P22 root@192.168.1.2:/home/test  ./ 【远程机器/home/test 复制到本机当前目录】</span><br><span class="line">还可以加参数 -q 【去掉进度显示】</span><br><span class="line"></span><br><span class="line">2、从文件读取密码</span><br><span class="line">echo &quot;user_password&quot; &gt; user.passwd</span><br><span class="line">sshpass -f user.passwd ssh user_name@192.168.1.2</span><br><span class="line"></span><br><span class="line">3、从环境变量获取密码</span><br><span class="line">export SSHPASS=&quot;user_password&quot;</span><br><span class="line">sshpass -e ssh user_name@192.168.1.2 </span><br><span class="line"></span><br><span class="line">4、sshpass -p user_password ssh  -o StrictHostKeyChecking=no  user_name@192.168.1.2 </span><br><span class="line">【-o StrictHostKeyChecking=no 表示远程连接时不提示是否输入yes/no】</span><br><span class="line"></span><br><span class="line">5、使用sshpass远程免密，在远程主机上执行shell命令，如下远程执行命令：touch /opt/file.txt</span><br><span class="line">sshpass -p user_password ssh  -o StrictHostKeyChecking=no  user_name@192.168.1.2  touch /opt/file.txt</span><br><span class="line">[注：shell命令要和sshpass命令写在一行]</span><br></pre></td></tr></table></figure>
 
 <p><a name="ypt1r"></a></p>
-<h2 id="5、ufw防火墙"><a href="#5、ufw防火墙" class="headerlink" title="5、ufw防火墙"></a>5、ufw防火墙</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#安装防火墙</span>
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> ufw
-<span class="token comment">#防火墙开启</span>
-<span class="token function">sudo</span> ufw <span class="token builtin class-name">enable</span>
-<span class="token comment">#防火墙重启</span>
-<span class="token function">sudo</span> ufw reload
-<span class="token comment">#关闭防火墙</span>
-<span class="token function">sudo</span> ufw disable
-<span class="token comment">#开放22端口</span>
-<span class="token function">sudo</span> ufw allow <span class="token number">22</span>
-<span class="token comment">#禁用22端口</span>
-<span class="token function">sudo</span> ufw delete allow <span class="token number">22</span>
-<span class="token comment">#查看端口开启状态</span>
-<span class="token function">sudo</span> ufw status
-<span class="token comment">#允许此IP访问所有的本机端口</span>
-<span class="token function">sudo</span> ufw allow from <span class="token number">192.168</span>.3.135
-<span class="token comment">#禁止外部访问SMTP服务</span>
-<span class="token function">sudo</span> ufw deny smtp
-<span class="token comment">#删除上面建立的某条规则</span>
-<span class="token function">sudo</span> ufw delete allow smtp 
-
-<span class="token comment">#推荐使用</span>
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> ufw
-<span class="token function">sudo</span> ufw <span class="token builtin class-name">enable</span>
-<span class="token function">sudo</span> ufw default deny <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="5、ufw防火墙"><a href="#5、ufw防火墙" class="headerlink" title="5、ufw防火墙"></a>5、ufw防火墙</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">安装防火墙</span></span><br><span class="line">sudo apt-get install ufw</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">防火墙开启</span></span><br><span class="line">sudo ufw enable</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">防火墙重启</span></span><br><span class="line">sudo ufw reload</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">关闭防火墙</span></span><br><span class="line">sudo ufw disable</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">开放22端口</span></span><br><span class="line">sudo ufw allow 22</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">禁用22端口</span></span><br><span class="line">sudo ufw delete allow 22</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">查看端口开启状态</span></span><br><span class="line">sudo ufw status</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">允许此IP访问所有的本机端口</span></span><br><span class="line">sudo ufw allow from 192.168.3.135</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">禁止外部访问SMTP服务</span></span><br><span class="line">sudo ufw deny smtp</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">删除上面建立的某条规则</span></span><br><span class="line">sudo ufw delete allow smtp </span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">推荐使用</span></span><br><span class="line">sudo apt-get install ufw</span><br><span class="line">sudo ufw enable</span><br><span class="line">sudo ufw default deny </span><br></pre></td></tr></table></figure>
 
 <p>6.定时任务</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#安装定时工具</span>
-yum <span class="token function">install</span> cronie
-
-<span class="token comment">#启动服务</span>
-<span class="token function">service</span> crond start 
-<span class="token comment">#重启服务</span>
-<span class="token function">service</span> crond restart 
-<span class="token comment">#关闭服务</span>
-<span class="token function">service</span> crond stop 
-<span class="token comment">#重新加载服务</span>
-<span class="token function">service</span> crond reload 
-<span class="token comment">#查看状态</span>
-<span class="token function">service</span> crond status 
-<span class="token number">0</span> <span class="token number">0</span> <span class="token number">6</span> * * ? <span class="token boolean">true</span> <span class="token operator">></span> /var/log/nginx/access.log
-<span class="token number">0</span> <span class="token number">0</span> <span class="token number">6</span> * * ? <span class="token boolean">true</span> <span class="token operator">></span> /var/log/nginx/error.log
-:wq <span class="token comment">#保存</span>
-
-<span class="token comment"># 编辑定时命令 出发vim编辑器</span>
-<span class="token function">crontab</span> <span class="token parameter variable">-e</span>
-
-<span class="token comment">#查看当前所有定时任务</span>
-<span class="token function">crontab</span> <span class="token parameter variable">-l</span>
-
-<span class="token comment">#删除当前所有定时任务</span>
-<span class="token function">crontab</span> <span class="token parameter variable">-r</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">安装定时工具</span></span><br><span class="line">yum install cronie</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">启动服务</span></span><br><span class="line">service crond start </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">重启服务</span></span><br><span class="line">service crond restart </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">关闭服务</span></span><br><span class="line">service crond stop </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">重新加载服务</span></span><br><span class="line">service crond reload </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">查看状态</span></span><br><span class="line">service crond status </span><br><span class="line">0 0 6 * * ? true &gt; /var/log/nginx/access.log</span><br><span class="line">0 0 6 * * ? true &gt; /var/log/nginx/error.log</span><br><span class="line">:wq #保存</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">编辑定时命令 出发vim编辑器</span></span><br><span class="line">crontab -e</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">查看当前所有定时任务</span></span><br><span class="line">crontab -l</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">删除当前所有定时任务</span></span><br><span class="line">crontab -r</span><br></pre></td></tr></table></figure>
 
   
   
