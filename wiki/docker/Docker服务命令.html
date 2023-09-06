@@ -20,16 +20,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" content="#f8f8f8">
   
-  <title>开源框架 - aloneme</title>
+  <title>Docker：Docker服务命令 - aloneme</title>
 
   
-    <meta name="description" content="简单地活着, 肆意又精彩.">
+    <meta name="description" content="这里主要介绍Linux版的Docker服务启动与关闭，如需Windows的请询问度娘，个人认为Windows版Docker还是很少装。本人也体验过Windows版从安装到使用都没用Linux版的好用。注：systemctl命令是系统服务管理器指令，它是 service 和 chkconfig 两个命令组合  4.1、Docker服务的启动1systemctl start docker  4.2、">
 <meta property="og:type" content="website">
-<meta property="og:title" content="开源框架">
-<meta property="og:url" content="https://hexo.aloneme.cn/wiki/tags/%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6/index.html">
+<meta property="og:title" content="Docker服务命令">
+<meta property="og:url" content="https://hexo.aloneme.cn/wiki/docker/Docker%E6%9C%8D%E5%8A%A1%E5%91%BD%E4%BB%A4.html">
 <meta property="og:site_name" content="aloneme">
-<meta property="og:description" content="简单地活着, 肆意又精彩.">
+<meta property="og:description" content="这里主要介绍Linux版的Docker服务启动与关闭，如需Windows的请询问度娘，个人认为Windows版Docker还是很少装。本人也体验过Windows版从安装到使用都没用Linux版的好用。注：systemctl命令是系统服务管理器指令，它是 service 和 chkconfig 两个命令组合  4.1、Docker服务的启动1systemctl start docker  4.2、">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-09-05T07:49:54.000Z">
+<meta property="article:modified_time" content="2023-09-06T08:58:44.584Z">
 <meta property="article:author" content="yz">
 <meta property="article:tag" content="yz YongZheng Java SpringBoot">
 <meta name="twitter:card" content="summary">
@@ -61,48 +63,60 @@
   
 
 
+
+
   <div class='l_body' id='start'>
-    <aside class='l_left' layout='wiki_index'>
+    <aside class='l_left' layout='wiki'>
     
 
   
 
-<header class="header"><div class="logo-wrap"><a class="title" href="/"><div class="main" ff="title">aloneme</div><div class="sub normal cap">简单地活着, 肆意又精彩.</div><div class="sub hover cap" style="opacity:0"> aloneme.cn</div></a></div>
-
-<nav class="menu dis-select"><a class="nav-item" href="/">文章</a><a class="nav-item active" href="/wiki/">专题</a></nav>
-</header>
 
 
-<div class="widgets">
-<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/wiki/" placeholder="文档搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
 
-<widget class="widget-wrapper recent"><div class="widget-header cap theme dis-select"><span class="name">最近更新</span></div><div class="widget-body related-posts fs14"><a class="item title" href="/wiki/docker/Docker%E6%97%A5%E5%BF%97%E6%B8%85%E7%90%86.html"><span class="title"><strong>Docker</strong><span class="dot"></span>Docker日志清理</span></a><a class="item title" href="/wiki/docker/Docker%E5%AE%B9%E5%99%A8%E5%91%BD%E4%BB%A4.html"><span class="title"><strong>Docker</strong><span class="dot"></span>Docker容器命令</span></a><a class="item title" href="/wiki/docker/Dockerfile%E7%9A%84%E4%BD%BF%E7%94%A8.html"><span class="title"><strong>Docker</strong><span class="dot"></span>Dockerfile的使用</span></a><a class="item title" href="/wiki/docker/Docker%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93.html"><span class="title"><strong>Docker</strong><span class="dot"></span>Docker私有仓库</span></a><a class="item title" href="/wiki/docker/Docker-Compose%E5%85%A5%E9%97%A8.html"><span class="title"><strong>Docker</strong><span class="dot"></span>Docker-Compose入门</span></a></div></widget>
+<div class="widgets"><widget class="widget-wrapper logo-wrap wiki"><div class="widget-body"><a style="filter: grayscale(100%)" class="wiki-home cap" href="/wiki"><svg aria-hidden="true" viewBox="0 0 16 16" width="1rem" height="1rem" fill="currentColor"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"></path></svg>所有项目</a><a class="title" href="/wiki/docker/Docker%E7%AE%80%E4%BB%8B.html"><div class="main" ff="title">Docker</div><div class="sub normal cap">Docker</div><div class="sub hover cap" style="opacity:0"> Designed by aloneme</div></a></div></widget>
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/wiki/docker/" placeholder="在Docker专题中搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
 
 
+<widget class="widget-wrapper toc multi" id="data-toc"><div class="widget-header cap dis-select"><span class="name">Docker服务命令</span></div><div class="widget-body fs14"><div class="doc-tree"><a class="doc-tree-link" href="/wiki/docker/Docker%E7%AE%80%E4%BB%8B.html#start"><span class="toc-text">Docker简介</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/wiki/docker/Docker%E5%AE%89%E8%A3%85.html"><span class="toc-text">Docker安装</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/wiki/docker/Docker%E6%97%A5%E5%BF%97%E6%B8%85%E7%90%86.html"><span class="toc-text">Docker日志清理</span></a></div><div class="doc-tree active"><a class="doc-tree-link active" href="/wiki/docker/Docker%E6%9C%8D%E5%8A%A1%E5%91%BD%E4%BB%A4.html"><span class="toc-text">Docker服务命令</span></a><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1%E3%80%81Docker%E6%9C%8D%E5%8A%A1%E7%9A%84%E5%90%AF%E5%8A%A8"><span class="toc-text">4.1、Docker服务的启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2%E3%80%81Docker%E6%9C%8D%E5%8A%A1%E7%9A%84%E5%81%9C%E6%AD%A2"><span class="toc-text">4.2、Docker服务的停止</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3%E3%80%81Docker%E6%9C%8D%E5%8A%A1%E7%9A%84%E9%87%8D%E5%90%AF"><span class="toc-text">4.3、Docker服务的重启</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4%E3%80%81%E6%9F%A5%E7%9C%8BDocker%E6%9C%8D%E5%8A%A1%E7%8A%B6%E6%80%81"><span class="toc-text">4.4、查看Docker服务状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-5%E3%80%81%E8%AE%BE%E7%BD%AEDocker%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8"><span class="toc-text">4.5、设置Docker开机启动</span></a></li></ol></div><div class="doc-tree"><a class="doc-tree-link" href="/wiki/docker/Docker%E9%95%9C%E5%83%8F%E5%91%BD%E4%BB%A4.html"><span class="toc-text">Docker镜像命令</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/wiki/docker/Docker%E5%AE%B9%E5%99%A8%E5%91%BD%E4%BB%A4.html"><span class="toc-text">Docker容器命令</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/wiki/docker/Docker%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93.html"><span class="toc-text">Docker私有仓库</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/wiki/docker/Dockerfile%E7%9A%84%E4%BD%BF%E7%94%A8.html"><span class="toc-text">Dockerfile的使用</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/wiki/docker/Docker-Compose%E5%85%A5%E9%97%A8.html"><span class="toc-text">Docker-Compose入门</span></a></div></div></widget>
 </div>
 
 
     </aside>
-    <div class='l_main list'>
+    <div class='l_main'>
       
-  
-
-<header class="header mobile-only"><div class="logo-wrap"><a class="title" href="/"><div class="main" ff="title">aloneme</div><div class="sub normal cap">简单地活着, 肆意又精彩.</div><div class="sub hover cap" style="opacity:0"> aloneme.cn</div></a></div></header>
-
-
 
       
 
   
+  
+  
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" id="home" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki/">专题</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/wiki/docker/Docker%E7%AE%80%E4%BB%8B.html">Docker</a></div><div id="post-meta">更新于&nbsp;<time datetime="2023-09-06T08:58:44.584Z">2023-09-06</time></div></div>
 
+  <article class='md-text content wiki'>
+  <h1 class="article-title"><span>Docker服务命令</span></h1>
+  <blockquote>
+<p>这里主要介绍Linux版的Docker服务启动与关闭，如需Windows的请询问度娘，个人认为Windows版Docker还是很少装。本人也体验过Windows版从安装到使用都没用Linux版的好用。<br>注：<strong>systemctl</strong>命令是系统服务管理器指令，它是 service 和 chkconfig 两个命令组合</p>
+</blockquote>
+<h2 id="4-1、Docker服务的启动"><a href="#4-1、Docker服务的启动" class="headerlink" title="4.1、Docker服务的启动"></a>4.1、<code>Docker</code>服务的启动</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start docker</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-2、Docker服务的停止"><a href="#4-2、Docker服务的停止" class="headerlink" title="4.2、Docker服务的停止"></a>4.2、<code>Docker</code>服务的停止</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop docker</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-3、Docker服务的重启"><a href="#4-3、Docker服务的重启" class="headerlink" title="4.3、Docker服务的重启"></a>4.3、<code>Docker</code>服务的重启</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-4、查看Docker服务状态"><a href="#4-4、查看Docker服务状态" class="headerlink" title="4.4、查看Docker服务状态"></a>4.4、查看<code>Docker</code>服务状态</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status docker</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-5、设置Docker开机启动"><a href="#4-5、设置Docker开机启动" class="headerlink" title="4.5、设置Docker开机启动"></a>4.5、设置<code>Docker</code>开机启动</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable docker</span><br></pre></td></tr></table></figure>
 
   
+  
 
-<div class="nav-wrap"><nav class="sub wiki cap"><a href="/wiki">所有项目</a></a><a class="active" href="/wiki/tags/%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6/index.html">开源框架</a></a><a href="/wiki/tags/%E6%8A%80%E6%9C%AF%E4%B8%93%E9%A2%98/index.html">技术专题</a></a></nav></div>
 
-  <div class="post-list wiki filter"><a class="post-card wiki " href="/wiki/ruoyi-vue-plus/Linux%E5%AE%89%E8%A3%85JDK.html">
-<article class="md-text"><div class="preview"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/wiki/ruoyi-vue-plus/img/logo.png" alt="logo" height="112px"/></div><div class="excerpt"><div class="cap breadcrumb">开源框架</div><h2 class="post-title">RuoYi-Vue-Plus - 开源框架</h2><p>开源框架🔜快速开发</p></div></article>
-</a></div>
+  </article>
+  
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">回顾上一篇</div><a href="/wiki/docker/Docker%E6%97%A5%E5%BF%97%E6%B8%85%E7%90%86.html">Docker日志清理</a></div><div class="item" id="next"><div class="note">接下来阅读</div><a href="/wiki/docker/Docker%E9%95%9C%E5%83%8F%E5%91%BD%E4%BB%A4.html">Docker镜像命令</a></div></section></div>
+
+  
 
 
 

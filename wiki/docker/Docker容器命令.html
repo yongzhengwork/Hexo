@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>Docker：Docker容器命令 - aloneme</title>
+
+  
+    <meta name="description" content="6.1 查看容器A。查看正在运行的容器 123456[root@gitlab ~]# docker psCONTAINER ID        IMAGE                        COMMAND                  CREATED             STATUS                 PORTS">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Docker容器命令">
+<meta property="og:url" content="https://hexo.aloneme.cn/wiki/docker/Docker%E5%AE%B9%E5%99%A8%E5%91%BD%E4%BB%A4.html">
+<meta property="og:site_name" content="aloneme">
+<meta property="og:description" content="6.1 查看容器A。查看正在运行的容器 123456[root@gitlab ~]# docker psCONTAINER ID        IMAGE                        COMMAND                  CREATED             STATUS                 PORTS">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-09-05T07:49:54.000Z">
+<meta property="article:modified_time" content="2023-09-06T09:14:47.810Z">
+<meta property="article:author" content="yz">
+<meta property="article:tag" content="yz YongZheng Java SpringBoot">
+<meta name="twitter:card" content="summary">
+  
+  
+  
+  <meta name="keywords" content="yz YongZheng Java SpringBoot">
+
+  <!-- feed -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+
+  
+
+  
+
+
+  
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='wiki'>
+    
+
+  
+
+
+
+
+<div class="widgets"><widget class="widget-wrapper logo-wrap wiki"><div class="widget-body"><a style="filter: grayscale(100%)" class="wiki-home cap" href="/wiki"><svg aria-hidden="true" viewBox="0 0 16 16" width="1rem" height="1rem" fill="currentColor"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"></path></svg>所有项目</a><a class="title" href="/wiki/docker/Docker%E7%AE%80%E4%BB%8B.html"><div class="main" ff="title">Docker</div><div class="sub normal cap">Docker</div><div class="sub hover cap" style="opacity:0"> Designed by aloneme</div></a></div></widget>
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/wiki/docker/" placeholder="在Docker专题中搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
+
+<widget class="widget-wrapper toc multi" id="data-toc"><div class="widget-header cap dis-select"><span class="name">Docker容器命令</span></div><div class="widget-body fs14"><div class="doc-tree"><a class="doc-tree-link" href="/wiki/docker/Docker%E7%AE%80%E4%BB%8B.html#start"><span class="toc-text">Docker简介</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/wiki/docker/Docker%E5%AE%89%E8%A3%85.html"><span class="toc-text">Docker安装</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/wiki/docker/Docker%E6%97%A5%E5%BF%97%E6%B8%85%E7%90%86.html"><span class="toc-text">Docker日志清理</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/wiki/docker/Docker%E6%9C%8D%E5%8A%A1%E5%91%BD%E4%BB%A4.html"><span class="toc-text">Docker服务命令</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/wiki/docker/Docker%E9%95%9C%E5%83%8F%E5%91%BD%E4%BB%A4.html"><span class="toc-text">Docker镜像命令</span></a></div><div class="doc-tree active"><a class="doc-tree-link active" href="/wiki/docker/Docker%E5%AE%B9%E5%99%A8%E5%91%BD%E4%BB%A4.html"><span class="toc-text">Docker容器命令</span></a><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-%E6%9F%A5%E7%9C%8B%E5%AE%B9%E5%99%A8"><span class="toc-text">6.1 查看容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-%E5%88%9B%E5%BB%BA%E4%B8%8E%E5%90%AF%E5%8A%A8%E5%AE%B9%E5%99%A8"><span class="toc-text">6.2 创建与启动容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-%E5%90%AF%E5%8A%A8%E4%B8%8E%E5%81%9C%E6%AD%A2%E5%AE%B9%E5%99%A8"><span class="toc-text">6.3 启动与停止容器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#A%E3%80%81%E5%90%AF%E5%8A%A8%E5%AE%B9%E5%99%A8%EF%BC%9A"><span class="toc-text">A、启动容器：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#B%E3%80%81%E9%87%8D%E5%90%AF%E5%AE%B9%E5%99%A8"><span class="toc-text">B、重启容器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#B%E3%80%81%E5%81%9C%E6%AD%A2%E5%AE%B9%E5%99%A8%EF%BC%9A"><span class="toc-text">B、停止容器：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C%E3%80%81%E5%88%A0%E9%99%A4%E5%AE%B9%E5%99%A8"><span class="toc-text">C、删除容器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#D%E3%80%81%E6%9F%A5%E7%9C%8B%E5%AE%B9%E5%99%A8"><span class="toc-text">D、查看容器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#E%E3%80%81%E5%AE%B9%E5%99%A8%E7%9A%84%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA"><span class="toc-text">E、容器的导入导出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#F%E3%80%81%E8%BF%9B%E5%85%A5%E5%AE%B9%E5%99%A8"><span class="toc-text">F、进入容器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4%E3%80%81%E6%96%87%E4%BB%B6%E6%8B%B7%E8%B4%9D"><span class="toc-text">6.4、文件拷贝</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-4-1%E3%80%81%E5%B0%86%E6%96%87%E4%BB%B6%E6%8B%B7%E8%B4%9D%E5%88%B0%E5%AE%B9%E5%99%A8"><span class="toc-text">6.4.1、将文件拷贝到容器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-4-2%E3%80%81%E4%BB%8E%E5%AE%B9%E5%99%A8%E6%8B%B7%E8%B4%9D%E5%88%B0%E5%AE%BF%E4%B8%BB%E6%9C%BA"><span class="toc-text">6.4.2、从容器拷贝到宿主机</span></a></li></ol></li></ol></div><div class="doc-tree"><a class="doc-tree-link" href="/wiki/docker/Docker%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93.html"><span class="toc-text">Docker私有仓库</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/wiki/docker/Dockerfile%E7%9A%84%E4%BD%BF%E7%94%A8.html"><span class="toc-text">Dockerfile的使用</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/wiki/docker/Docker-Compose%E5%85%A5%E9%97%A8.html"><span class="toc-text">Docker-Compose入门</span></a></div></div></widget>
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+  
+  
+  
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" id="home" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki/">专题</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/wiki/docker/Docker%E7%AE%80%E4%BB%8B.html">Docker</a></div><div id="post-meta">更新于&nbsp;<time datetime="2023-09-06T09:14:47.810Z">2023-09-06</time></div></div>
+
+  <article class='md-text content wiki'>
+  <h1 class="article-title"><span>Docker容器命令</span></h1>
+  <h3 id="6-1-查看容器"><a href="#6-1-查看容器" class="headerlink" title="6.1 查看容器"></a>6.1 查看容器</h3><p>A。查看正在运行的容器</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@gitlab ~]# docker ps</span><br><span class="line">CONTAINER ID        IMAGE                        COMMAND                  CREATED             STATUS                 PORTS                                                               NAMES</span><br><span class="line">db71526cf08c        seataio/seata-server:1.0.0   &quot;java -Djava.securit…&quot;   4 days ago          Up 4 days              0.0.0.0:8091-&gt;8091/tcp                                              seata-server</span><br><span class="line">8cbfdf71a92b        nacos/nacos-server           &quot;bin/docker-startup.…&quot;   12 days ago         Up 12 days             0.0.0.0:8848-&gt;8848/tcp                                              nacos</span><br><span class="line">900c164303b4        zookeeper                    &quot;/docker-entrypoint.…&quot;   6 weeks ago         Up 2 weeks             2888/tcp, 3888/tcp, 8080/tcp, 0.0.0.0:2182-&gt;2181/tcp                zookeeper-yz</span><br><span class="line">15f401418436        gitlab/gitlab-ce:latest      &quot;/assets/wrapper&quot;        7 weeks ago         Up 2 weeks (healthy)   0.0.0.0:2222-&gt;22/tcp, 0.0.0.0:8800-&gt;80/tcp, 0.0.0.0:8443-&gt;443/tcp   gitlab-ce</span><br></pre></td></tr></table></figure>
+
+<p>结果描述:</p>
+<table>
+<thead>
+<tr>
+<th>CONTAINER ID</th>
+<th>IMAGE</th>
+<th>COMMAND</th>
+<th>CREATED</th>
+<th>STATUS</th>
+<th>PORTS</th>
+<th>NAMES</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>容器id</td>
+<td>元镜像</td>
+<td></td>
+<td>创建时间</td>
+<td>运行状态</td>
+<td>端口映射</td>
+<td>容器名</td>
+</tr>
+</tbody></table>
+<p>B、查看所有容器</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps –a</span><br></pre></td></tr></table></figure>
+
+<p>C、查看最后一次运行的容器</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps –l</span><br></pre></td></tr></table></figure>
+
+<p>D、查看停止的容器</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -f status=exited</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-2-创建与启动容器"><a href="#6-2-创建与启动容器" class="headerlink" title="6.2 创建与启动容器"></a>6.2 创建与启动容器</h3><blockquote>
+<p>创建容器常用的参数说明：docker run</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>–name</td>
+<td>容器命名</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>表示容器启动后会进入其命令行。加入这两个参数后，容器创建就能登录进去。即分配一个伪终端</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>守护式容器在后台运行（这样创建容器后不会自动登录容器，如果只加-i -t两个参数，创建后就会自动进去容器）</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>表示目录映射关系（前者是宿主机目录，后者是映射到宿主机上的目录)。可以设置多个</td>
+</tr>
+<tr>
+<td>注意：最好做目录映射，在宿主机上做修改，然后共享到容器上。如果出现目录没有权限问题，加上<code>--privileged=true</code></td>
+<td></td>
+</tr>
+<tr>
+<td>-p</td>
+<td>端口映射，前者是宿主机端口，后者是容器内的映射端口。可以使用多个-p做多个端口映射</td>
+</tr>
+</tbody></table>
+</blockquote>
+<p>注意：-v ：如果你共享的是多级的目录，可能会出现权限不足的提示。这是因为CentOS7中的安全模块selinux把权限禁掉了，我们需要添加参数<br>–privileged&#x3D;true 来解决挂载的目录没有权限的问题。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker run -di --privileged=true --name=mycentos3 \</span><br><span class="line">-v /usr/local/myhtml:/usr/local/myhtml  centos:7</span><br></pre></td></tr></table></figure>
+
+<p>A、交互式运行</p>
+<p>docker run -it –name&#x3D;容器名称 镜像名称:标签</p>
+<p>注：退出交互式运行（退出时容器停止） exit</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it ubuntu /bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>注意：交互式运行退出，容器则停止。</p>
+<p>B、守护式方式创建容器：<br>docker run -id –name&#x3D;容器名称 镜像名称:标签</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -id ubuntu /bin/bash</span><br></pre></td></tr></table></figure>
+
+<h1 id="注：运行一个需要长时间运行的容器，也可以理解为后台运行"><a href="#注：运行一个需要长时间运行的容器，也可以理解为后台运行" class="headerlink" title="注：运行一个需要长时间运行的容器，也可以理解为后台运行"></a>注：运行一个需要长时间运行的容器，也可以理解为后台运行</h1><p>C、登录守护式容器方式：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it 容器名称 (或者容器ID)  /bin/bash</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-3-启动与停止容器"><a href="#6-3-启动与停止容器" class="headerlink" title="6.3 启动与停止容器"></a>6.3 启动与停止容器</h3><h4 id="A、启动容器："><a href="#A、启动容器：" class="headerlink" title="A、启动容器："></a>A、启动容器：</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker start 容器名称（或者容器ID）</span><br><span class="line">docker start $CONTAINER_ID/$NAME</span><br></pre></td></tr></table></figure>
+
+<h4 id="B、重启容器"><a href="#B、重启容器" class="headerlink" title="B、重启容器"></a>B、重启容器</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker restart $CONTAINER_ID/$NAME</span><br></pre></td></tr></table></figure>
+
+<h4 id="B、停止容器："><a href="#B、停止容器：" class="headerlink" title="B、停止容器："></a>B、停止容器：</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">立即终止</span></span><br><span class="line">docker stop 容器名称（或者容器ID）</span><br><span class="line">docker stop $CONTAINER_ID/$NAME</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">延时终止（秒）</span></span><br><span class="line">docker stop -t 20  容器名称（或者容器ID）</span><br><span class="line">docker stop -t 20  $CONTAINER_ID/$NAME </span><br></pre></td></tr></table></figure>
+
+<h4 id="C、删除容器"><a href="#C、删除容器" class="headerlink" title="C、删除容器"></a>C、删除容器</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker rm 容器名称（或者容器ID）</span><br><span class="line">docker rm $CONTAINER_ID/$NAME</span><br></pre></td></tr></table></figure>
+
+<p>扩展：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo docker rm -f $CONTAINER_ID/$NAME</span><br><span class="line">		-f： --force=false 强制终止并删除一个运行中的容器</span><br><span class="line">		-l： --link=false 删除容器的连接，但保留容器</span><br><span class="line"> 	-v： --volumes=false删除容器所挂载的数据卷</span><br></pre></td></tr></table></figure>
+
+<h4 id="D、查看容器"><a href="#D、查看容器" class="headerlink" title="D、查看容器"></a>D、查看容器</h4><ul>
+<li>查看容器运行的各种参数</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker inspect $CONTAINER_ID/$NAME</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查询容器的IP</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker inspect --format &#x27;&#123;&#123; .NetworkSettings.IPAddress &#125;&#125;&#x27; $CONTAINER_ID/$NAME</span><br></pre></td></tr></table></figure>
+
+<h4 id="E、容器的导入导出"><a href="#E、容器的导入导出" class="headerlink" title="E、容器的导入导出"></a>E、容器的导入导出</h4><ul>
+<li>导出容器</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker export 4968e97f588d -ubuntu.tar</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>导入容器</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ubuntu.tar | sudo docker import - yongzheng/ubuntu:v1.0</span><br></pre></td></tr></table></figure>
+
+<h4 id="F、进入容器"><a href="#F、进入容器" class="headerlink" title="F、进入容器"></a>F、进入容器</h4><ul>
+<li>attach命令</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker attach $CONTAINER_ID/$NAME</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>exec命令</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker exec -it $CONTAINER_ID/$NAME /bin/bash</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-4、文件拷贝"><a href="#6-4、文件拷贝" class="headerlink" title="6.4、文件拷贝"></a>6.4、文件拷贝</h3><h4 id="6-4-1、将文件拷贝到容器"><a href="#6-4-1、将文件拷贝到容器" class="headerlink" title="6.4.1、将文件拷贝到容器"></a>6.4.1、将文件拷贝到容器</h4><blockquote>
+<p>如果我们需要将文件拷贝到容器内可以使用cp命令</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker cp 需要拷贝的文件或目录 容器名称:容器文件或目录</span><br><span class="line"></span><br><span class="line">docker cp nginx.conf  $CONTAINER_ID/$NAME:/etc/nginx/nginx.conf</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-4-2、从容器拷贝到宿主机"><a href="#6-4-2、从容器拷贝到宿主机" class="headerlink" title="6.4.2、从容器拷贝到宿主机"></a>6.4.2、从容器拷贝到宿主机</h4><blockquote>
+<p>也可以将文件从容器内拷贝出来</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker cp 容器名称:容器文件或目录 需要拷贝的文件或目录</span><br><span class="line"></span><br><span class="line">docker cp $CONTAINER_ID/$NAME:/etc/nginx/nginx.conf nginx.conf </span><br></pre></td></tr></table></figure>
+  
+  
+
+
+  </article>
+  
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">回顾上一篇</div><a href="/wiki/docker/Docker%E9%95%9C%E5%83%8F%E5%91%BD%E4%BB%A4.html">Docker镜像命令</a></div><div class="item" id="next"><div class="note">接下来阅读</div><a href="/wiki/docker/Docker%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93.html">Docker私有仓库</a></div></section></div>
+
+  
+
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="text"><p>本站由 <a href="/">@aloneme</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = stellar.config.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.19.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+    root : '/',
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"codeblock":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>
